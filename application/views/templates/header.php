@@ -56,7 +56,7 @@ if (!$this->session->has_userdata('login_session')) {
                 <div class="sidebar-brand-icon ">
                     <img src="<?= base_url(); ?>assets/icon/box.png" width="50">
                 </div>
-                <div class="sidebar-brand-text mx-3 ">INVENTORY</div>
+                <div class="sidebar-brand-text mx-3 ">INVENTORY GUDANG</div>
                 
             </a>
 
