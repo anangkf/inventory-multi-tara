@@ -28,14 +28,14 @@
 
 
         <!-- Earnings (Monthly) Card Example -->
-        <div class="col-xl-3 col-md-6 mb-4" id="supplier">
+        <div class="col-xl-3 col-md-6 mb-4" id="pelanggan">
             <div class="card border-left-info shadow h-100 py-2">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Supplier
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Pelanggan
                             </div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?= $jmlsupplier ?> Data</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?= $jmlpelanggan ?> Data</div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-users fa-2x text-gray-300"></i>
@@ -275,7 +275,7 @@ $(document).ready(function() {
         }
     }).then((result) => {
         $("#barang").addClass("bounceIn");
-        $("#supplier").addClass("bounceIn");
+        $("#pelanggan").addClass("bounceIn");
         $("#stok").addClass("bounceIn");
         $("#user").addClass("bounceIn");
         $("#grafik").addClass("bounceIn");

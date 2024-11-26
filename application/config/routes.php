@@ -11,7 +11,7 @@ $route['user'] = 'User/index';
 $route['login'] = 'Login/index';
 
 //master
-$route['supplier'] = 'Supplier/index';
+$route['pelanggan'] = 'Pelanggan/index';
 $route['jenis'] = 'Jenis/index';
 $route['satuan'] = 'Satuan/index';
 $route['barang'] = 'Barang/index';

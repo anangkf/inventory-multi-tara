@@ -9,7 +9,7 @@ $(document).ready(function() {
 
 function ambilData(id) {
     var link = $('#baseurl').val();
-    var base_url = link + 'supplier/getData';
+    var base_url = link + 'pelanggan/getData';
 
     $.ajax({
         type: 'POST',
@@ -17,8 +17,8 @@ function ambilData(id) {
         url: base_url,
         dataType: 'json',
         success: function(hasil) {
-            $('#idsupplier').val(hasil[0].id_supplier);
-            $('#supplier').val(hasil[0].nama_supplier);
+            $('#idpelanggan').val(hasil[0].id_pelanggan);
+            $('#pelanggan').val(hasil[0].nama_pelanggan);
             $('#notelp').val(hasil[0].notelp);
             $('#alamat').val(hasil[0].alamat);
         }
@@ -48,7 +48,7 @@ function konfirmasi(id) {
                 showConfirmButton: false,
             }).then(
                 function() {
-                    window.location.href = base_url + "supplier/proses_hapus/" + id;
+                    window.location.href = base_url + "pelanggan/proses_hapus/" + id;
                 }
             );
         }

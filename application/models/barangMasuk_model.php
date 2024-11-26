@@ -13,7 +13,7 @@ class barangMasuk_model extends ci_model{
       $this->db->select('*');
       $this->db->from('barang_masuk as bm');
       $this->db->join('barang as b', 'b.id_barang = bm.id_barang');
-      $this->db->join('supplier as s', 's.id_supplier = bm.id_supplier');
+      $this->db->join('pelanggan as p', 'p.id_pelanggan = bm.id_pelanggan');
 
       $this->db->order_by('bm.id_barang_masuk','DESC');
       return $query = $this->db->get();
@@ -24,7 +24,7 @@ class barangMasuk_model extends ci_model{
       $this->db->select('*');
       $this->db->from('barang_masuk as bm');
       $this->db->join('barang as b', 'b.id_barang = bm.id_barang');
-      $this->db->join('supplier as s', 's.id_supplier = bm.id_supplier');
+      $this->db->join('pelanggan as p', 'p.id_pelanggan = bm.id_pelanggan');
       
       $this->db->like('bm.tgl_masuk', $tahun);
       $this->db->order_by('bm.id_barang_masuk','DESC');
@@ -36,7 +36,7 @@ class barangMasuk_model extends ci_model{
       $this->db->select('*');
       $this->db->from('barang_masuk as bm');
       $this->db->join('barang as b', 'b.id_barang = bm.id_barang');
-      $this->db->join('supplier as s', 's.id_supplier = bm.id_supplier');
+      $this->db->join('pelanggan as p', 'p.id_pelanggan = bm.id_pelanggan');
 
       $this->db->order_by('bm.id_barang_masuk','DESC');
       $this->db->limit(5);
@@ -48,7 +48,7 @@ class barangMasuk_model extends ci_model{
       $this->db->select('*');
       $this->db->from('barang_masuk as bm');
       $this->db->join('barang as b', 'b.id_barang = bm.id_barang');
-      $this->db->join('supplier as s', 's.id_supplier = bm.id_supplier');
+      $this->db->join('pelanggan as p', 'p.id_pelanggan = bm.id_pelanggan');
 
       $this->db->where('bm.tgl_masuk >=', $tglAwal);
       $this->db->where('bm.tgl_masuk <=', $tglAkhir);
@@ -60,7 +60,7 @@ class barangMasuk_model extends ci_model{
       $this->db->select('*');
       $this->db->from('barang_masuk as bm');
       $this->db->join('barang as b', 'b.id_barang = bm.id_barang');
-      $this->db->join('supplier as s', 's.id_supplier = bm.id_supplier');
+      $this->db->join('pelanggan as p', 'p.id_pelanggan = bm.id_pelanggan');
 
       $this->db->where('bm.tgl_masuk >=', $tglAwal);
       $this->db->where('bm.tgl_masuk <=', $tglAkhir);
@@ -73,7 +73,7 @@ class barangMasuk_model extends ci_model{
       $this->db->select('*');
       $this->db->from('barang_masuk as bm');
       $this->db->join('barang as b', 'b.id_barang = bm.id_barang');
-      $this->db->join('supplier as s', 's.id_supplier = bm.id_supplier');
+      $this->db->join('pelanggan as p', 'p.id_pelanggan = bm.id_pelanggan');
       $this->db->where('bm.id_barang_masuk',$where);
       $this->db->order_by('bm.id_barang_masuk','DESC');
       return $query = $this->db->get();

@@ -3,7 +3,7 @@
 
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Data Supplier</h1>
+        <h1 class="h3 mb-0 text-gray-800">Data Pelanggan</h1>
         <a href="" data-toggle="modal" data-target="#form" class="btn btn-sm btn-primary btn-icon-split">
             <span class="text text-white">Tambah Data</span>
             <span class="icon text-white-50">
@@ -24,29 +24,29 @@
                         <thead>
                             <tr>
                                 <th width="1%">No</th>
-                                <th>Kode Supplier</th>
-                                <th>Nama Supplier</th>
+                                <th>Kode Pelanggan</th>
+                                <th>Nama Pelanggan</th>
                                 <th>No.Telepon</th>
                                 <th>Alamat</th>
                                 <th width="1%">Aksi</th>
                             </tr>
                         </thead>
                         <tbody id="tbody">
-                            <?php $no=1; foreach ($supplier as $s) { ?>
+                            <?php $no=1; foreach ($pelanggan as $p) { ?>
                             <tr>
                                 <td><?= $no++ ?>.</td>
-                                <td><?= $s->id_supplier ?></td>
-                                <td><?= $s->nama_supplier ?></td>
-                                <td><?= $s->notelp ?></td>
-                                <td><?= $s->alamat ?></td>
+                                <td><?= $p->id_pelanggan ?></td>
+                                <td><?= $p->nama_pelanggan ?></td>
+                                <td><?= $p->notelp ?></td>
+                                <td><?= $p->alamat ?></td>
                                 <td>
                                     <center>
                                         <a href="#" data-toggle="modal" data-target="#formU"
-                                            onclick="ambilData('<?= $s->id_supplier ?>')"
+                                            onclick="ambilData('<?= $p->id_pelanggan ?>')"
                                             class="btn btn-circle btn-success btn-sm">
                                             <i class="fas fa-pen"></i>
                                         </a>
-                                        <a href="#" onclick="konfirmasi('<?= $s->id_supplier ?>')"
+                                        <a href="#" onclick="konfirmasi('<?= $p->id_pelanggan ?>')"
                                             class="btn btn-circle btn-danger btn-sm">
                                             <i class="fas fa-trash"></i>
                                         </a>
@@ -71,11 +71,11 @@
 
 <!-- form input -->
 <div class="modal fade" id="form" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <form action="<?= base_url() ?>supplier/proses_tambah" name="myForm" method="POST" onsubmit="return validateForm()">
+    <form action="<?= base_url() ?>pelanggan/proses_tambah" name="myForm" method="POST" onsubmit="return validateForm()">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header bg-primary">
-                    <h5 class="modal-title text-white font-weight-bold" id="exampleModalLabel">Tambah Supplier</h5>
+                    <h5 class="modal-title text-white font-weight-bold" id="exampleModalLabel">Tambah Pelanggan</h5>
                     <button class="close text-white" type="button" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>
@@ -83,9 +83,9 @@
 
                 <div class="col-lg-12">
                     <br>
-                    <!-- Nama Supplier -->
-                    <div class="form-group"><label>Nama Supplier</label>
-                        <input class="form-control" name="supplier" type="text" placeholder="">
+                    <!-- Nama Pelanggan -->
+                    <div class="form-group"><label>Nama Pelanggan</label>
+                        <input class="form-control" name="pelanggan" type="text" placeholder="">
                     </div>
 
                     <!-- Nomor Telepon -->
@@ -122,12 +122,12 @@
 
 <!-- form ubah -->
 <div class="modal fade" id="formU" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <form action="<?= base_url() ?>supplier/proses_ubah" name="myFormUpdate" method="POST"
+    <form action="<?= base_url() ?>pelanggan/proses_ubah" name="myFormUpdate" method="POST"
         onsubmit="return validateFormUpdate()">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header bg-success">
-                    <h5 class="modal-title text-white font-weight-bold" id="exampleModalLabel">Ubah Supplier</h5>
+                    <h5 class="modal-title text-white font-weight-bold" id="exampleModalLabel">Ubah Pelanggan</h5>
                     <button class="close text-white" type="button" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>
@@ -135,14 +135,14 @@
 
                 <div class="col-lg-12">
                     <br>
-                    <!-- Id Supplier -->
-                    <div class="form-group"><label>ID Supplier</label>
-                        <input class="form-control" name="idsupplier" type="text" id="idsupplier" readonly>
+                    <!-- Id Pelanggan -->
+                    <div class="form-group"><label>ID Pelanggan</label>
+                        <input class="form-control" name="idpelanggan" type="text" id="idpelanggan" readonly>
                     </div>
 
-                    <!-- Nama Supplier -->
-                    <div class="form-group"><label>Nama Supplier</label>
-                        <input class="form-control" name="supplier" type="text" id="supplier">
+                    <!-- Nama Pelanggan -->
+                    <div class="form-group"><label>Nama Pelanggan</label>
+                        <input class="form-control" name="pelanggan" type="text" id="pelanggan">
                     </div>
 
                     <!-- Nomor Telepon -->
@@ -177,8 +177,8 @@
 </div>
 
 <script src="<?= base_url(); ?>assets/js/jquery.min.js"></script>
-<script src="<?= base_url(); ?>assets/js/supplier.js"></script>
-<script src="<?= base_url(); ?>assets/js/validasi/formsupplier.js"></script>
+<script src="<?= base_url(); ?>assets/js/pelanggan.js"></script>
+<script src="<?= base_url(); ?>assets/js/validasi/formpelanggan.js"></script>
 
 <?php if($this->session->flashdata('Pesan')): ?>
 <?= $this->session->flashdata('Pesan') ?>

@@ -1,11 +1,11 @@
 <?php
-class supplier_model extends ci_model{
+class pelanggan_model extends ci_model{
 
 
     function data()
     {
-        $this->db->order_by('id_supplier','DESC');
-        return $query = $this->db->get('supplier');
+        $this->db->order_by('id_pelanggan','DESC');
+        return $query = $this->db->get('pelanggan');
     }
 
 
@@ -45,10 +45,10 @@ class supplier_model extends ci_model{
 
 
     public function buat_kode()   {
-		  $this->db->select('RIGHT(supplier.id_supplier,4) as kode', FALSE);
-		  $this->db->order_by('id_supplier','DESC');
+		  $this->db->select('RIGHT(pelanggan.id_pelanggan,4) as kode', FALSE);
+		  $this->db->order_by('id_pelanggan','DESC');
 		  $this->db->limit(1);
-		  $query = $this->db->get('supplier');      //cek dulu apakah ada sudah ada kode di tabel.
+		  $query = $this->db->get('pelanggan');      //cek dulu apakah ada sudah ada kode di tabel.
 		  if($query->num_rows() <> 0){
 		   //jika kode ternyata sudah ada.
 		   $data = $query->row();

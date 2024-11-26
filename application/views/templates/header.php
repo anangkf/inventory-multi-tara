@@ -90,9 +90,10 @@ if (!$this->session->has_userdata('login_session')) {
                 <?php else: ?>
             <li class="nav-item">
                 <?php endif; ?>
-                <a class="nav-link" href="<?= base_url() ?>supplier">
+                <a class="nav-link" href="<?= base_url() ?>pelanggan">
                     <i class="fas fa-fw fa-users"></i>
-                    <span>Supplier</span>
+                    <!-- <span>Supplier</span> -->
+                    <span>Pelanggan</span>
                 </a>
             </li>
 

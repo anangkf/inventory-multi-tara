@@ -8,7 +8,7 @@ class Home extends CI_Controller {
     $this->load->helper('download');
 	$this->load->helper('cookie');
 	$this->load->model('barang_model');
-	$this->load->model('supplier_model');
+	$this->load->model('pelanggan_model');
 	$this->load->model('user_model');
 	$this->load->model('barangMasuk_model');
 	$this->load->model('barangKeluar_model');
@@ -18,7 +18,7 @@ class Home extends CI_Controller {
 	{
 		$data['title'] = 'Dashboard';
 		$data['jmlbarang'] = $this->barang_model->dataJoin()->num_rows();
-		$data['jmlsupplier'] = $this->supplier_model->data()->num_rows();
+		$data['jmlpelanggan'] = $this->pelanggan_model->data()->num_rows();
 		$data['jmlStok'] = $this->barang_model->totalStok();
 		$data['jmlUser'] = $this->user_model->data()->num_rows();
 		$data['bm5Terakhir'] = $this->barangMasuk_model->transaksiTerakhir()->result();
