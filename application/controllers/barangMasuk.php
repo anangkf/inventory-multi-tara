@@ -9,7 +9,6 @@ class BarangMasuk extends CI_Controller {
     $this->load->helper('download');
 	$this->load->library('pagination');
 	$this->load->helper('cookie');
-	$this->load->model('supplier_model');
 	$this->load->model('barang_model');
 	$this->load->model('barangMasuk_model');
   }
@@ -96,9 +95,6 @@ class BarangMasuk extends CI_Controller {
 		$data['barang'] = $this->barang_model->data()->result();
         $data['jmlbarang'] = $this->barang_model->data()->num_rows();
         
-        $data['supplier'] = $this->supplier_model->data()->result();
-        $data['jmlsupplier'] = $this->supplier_model->data()->num_rows();
-        
 		$data['tglnow'] = date('m/d/Y');
 
 		$this->load->view('templates/header', $data);
@@ -109,8 +105,6 @@ class BarangMasuk extends CI_Controller {
 	public function ubah($id)
 	{
 		$data['title'] = 'Barang Masuk';
-		$data['supplier'] = $this->supplier_model->data()->result();
-		$data['jmlsupplier'] = $this->supplier_model->data()->num_rows();
 
 		//menampilkan data berdasarkan id
 		$data['data'] = $this->barangMasuk_model->detailJoin($id)->result();
@@ -126,7 +120,6 @@ class BarangMasuk extends CI_Controller {
         $kode = $this->input->post('idbm');
         $tgl = $this->input->post('tgl');
 		$barang = $this->input->post('barang');
-		$supplier = $this->input->post('supplier');
         $jmlmasuk = $this->input->post('jmlbarang');
         $usrinput = $this->session->userdata('login_session')['id_user'];
 
@@ -137,7 +130,6 @@ class BarangMasuk extends CI_Controller {
 		$data=array(
 			'id_barang_masuk'=>$kode,
 			'id_barang'=> $barang,
-			'id_supplier'=>$supplier,
 			'jumlah_masuk'=>$jmlmasuk,
             'tgl_masuk'=>$tglmasuk,
             'id_user'=>$usrinput
@@ -165,7 +157,6 @@ class BarangMasuk extends CI_Controller {
 	{
 		$kode = $this->input->post('idbm');
 		$barang = $this->input->post('barang');
-		$supplier = $this->input->post('supplier');
 		$tgl = $this->input->post('tgl');
 		$jmlmasuk = $this->input->post('jmlmasuk');
 		$jmlmasuklama = $this->input->post('jmlmasuklama');
@@ -175,7 +166,6 @@ class BarangMasuk extends CI_Controller {
 		
 		$data=array(
 			'id_barang'=> $barang,
-			'id_supplier'=>$supplier,
 			'jumlah_masuk'=>$jmlmasuk,
 			'tgl_masuk'=>$tglmasuk
 		);

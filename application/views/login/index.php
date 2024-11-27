@@ -26,10 +26,10 @@
                                     <hr class="bg-white">
                                     <br>
                                     <div class="text-center">
-                                        <h1 class="h2 text-white mb-4"><b>APLIKASI</b></h1>
+                                        <h1 class="h2 mb-4"><b>APLIKASI</b></h1>
                                     </div>
                                     <div class="text-center">
-                                        <h1 class="h3 text-white mb-4">INVENTORY BARANG</h1>
+                                        <h1 class="h3 mb-4">INVENTORY GUDANG</h1>
                                     </div>
                                     <hr class="bg-white">
                                 </div>

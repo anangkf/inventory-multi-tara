@@ -46,7 +46,6 @@ class BarangKeluar extends CI_Controller {
 	}
 
 
-
 	public function getBarang()
 	{
 		$id = $this->input->post('id');
@@ -95,6 +94,9 @@ class BarangKeluar extends CI_Controller {
         
 		$data['barang'] = $this->barang_model->data()->result();
         $data['jmlbarang'] = $this->barang_model->data()->num_rows();
+
+				$data['pelanggan'] = $this->pelanggan_model->data()->result();
+        $data['jmlpelanggan'] = $this->pelanggan_model->data()->num_rows();
         
 		$data['tglnow'] = date('m/d/Y');
 
@@ -106,6 +108,8 @@ class BarangKeluar extends CI_Controller {
 	public function ubah($id)
 	{
 		$data['title'] = 'Barang Keluar';
+		$data['pelanggan'] = $this->pelanggan_model->data()->result();
+		$data['jmlpelanggan'] = $this->pelanggan_model->data()->num_rows();
 
 		//menampilkan data berdasarkan id
 		$data['data'] = $this->barangKeluar_model->detailJoin($id)->result();
@@ -121,6 +125,7 @@ class BarangKeluar extends CI_Controller {
         $kode = $this->input->post('idbk');
         $tgl = $this->input->post('tgl');
 		$barang = $this->input->post('barang');
+		$pelanggan = $this->input->post('pelanggan');
         $jmlkeluar = $this->input->post('jmlbarang');
         $usrinput = $this->session->userdata('login_session')['id_user'];
 
@@ -130,6 +135,7 @@ class BarangKeluar extends CI_Controller {
 		$data=array(
 			'id_barang_keluar'=>$kode,
 			'id_barang'=> $barang,
+			'id_pelanggan'=>$pelanggan,
 			'jumlah_keluar'=>$jmlkeluar,
             'tgl_keluar'=>$tglkeluar,
             'id_user'=>$usrinput
@@ -157,6 +163,7 @@ class BarangKeluar extends CI_Controller {
 	{
 		$kode = $this->input->post('idbk');
 		$barang = $this->input->post('barang');
+		$pelanggan = $this->input->post('pelanggan');
 		$tgl = $this->input->post('tgl');
 		$jmlkeluar = $this->input->post('jmlkeluar');
 		$jmlkeluarlama = $this->input->post('jmlkeluarlama');
@@ -166,6 +173,7 @@ class BarangKeluar extends CI_Controller {
 		
 		$data=array(
 			'id_barang'=> $barang,
+			'id_pelanggan'=>$pelanggan,
 			'jumlah_keluar'=>$jmlkeluar,
 			'tgl_keluar'=>$tglkeluar
 		);

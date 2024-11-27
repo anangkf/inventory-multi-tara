@@ -72,6 +72,7 @@
                                 <th width="1%">No</th>
                                 <th>Tgl Keluar</th>
                                 <th>No.Transaksi</th>
+                                <th>Pelanggan</th>
                                 <th>Barang</th>
                                 <th>Jumlah Keluar</th>
                             </tr>

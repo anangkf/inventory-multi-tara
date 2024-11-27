@@ -72,7 +72,6 @@
                                 <th width="1%">No</th>
                                 <th>Tgl Masuk</th>
                                 <th>No.Transaksi</th>
-                                <th>Supplier</th>
                                 <th>Barang</th>
                                 <th>Jumlah Masuk</th>
                             </tr>

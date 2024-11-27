@@ -50,6 +50,7 @@ function tgl_indo($tanggal){
                                 <th width="1%">No</th>
                                 <th>No.Transaksi</th>
                                 <th>Tgl Keluar</th>
+                                <th>Pelanggan</th>
                                 <th>Nama Barang</th>
                                 <th>Jumlah Keluar</th>
                                 <th width="1%">Aksi</th>
@@ -61,6 +62,7 @@ function tgl_indo($tanggal){
                                 <td><?= $no++ ?>.</td>
                                 <td><?= $bk->id_barang_keluar ?></td>
                                 <td><?= tgl_indo($bk->tgl_keluar) ?></td>
+                                <td><?= $bk->nama_pelanggan ?></td>
                                 <td><?= $bk->nama_barang ?></td>
                                 <td><span class="badge badge-danger"> <i class="fa fa-minus"></i> <?= $bk->jumlah_keluar ?></span></td>
                                 <td>

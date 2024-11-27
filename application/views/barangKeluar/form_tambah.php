@@ -70,6 +70,30 @@
                             </div>
                             <?php endif; ?>
 
+														<!-- opsi Pelanggan -->
+                            <?php if($jmlpelanggan > 0): ?>
+                            <div class="form-group"><label>Pelanggan</label>
+                                <select name="pelanggan" class="form-control chosen">
+                                    <option value="">--Pilih--</option>
+                                    <?php foreach($pelanggan as $p): ?>
+                                    <option value="<?= $p->id_pelanggan ?>"><?= $p->nama_pelanggan ?></option>
+                                    <?php endforeach ?>
+                                </select>
+                            </div>
+                            <?php else: ?>
+                            <div class="form-group"><label>Pelanggan</label>
+                                <input type="hidden" name="pelanggan">
+                                <div class="d-sm-flex justify-content-between">
+                                    <span class="text-danger"><i>(Belum Ada Data pelanggan!)</i></span>
+                                    <a href="<?= base_url() ?>pelanggan" class="btn btn-sm btn-primary btn-icon-split">
+                                        <span class="icon text-white">
+                                            <i class="fas fa-plus"></i>
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                            <?php endif; ?>
+
                             <!-- Jumlah Barang -->
                             <div class="form-group"><label>Jumlah Keluar</label>
                                 <input class="form-control" name="jmlbarang" type="number" placeholder="">

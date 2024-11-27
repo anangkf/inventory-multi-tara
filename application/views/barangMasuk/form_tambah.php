@@ -70,30 +70,6 @@
                             </div>
                             <?php endif; ?>
 
-                            <!-- opsi Supplier -->
-                            <?php if($jmlsupplier > 0): ?>
-                            <div class="form-group"><label>Supplier</label>
-                                <select name="supplier" class="form-control chosen">
-                                    <option value="">--Pilih--</option>
-                                    <?php foreach($supplier as $s): ?>
-                                    <option value="<?= $s->id_supplier ?>"><?= $s->nama_supplier ?></option>
-                                    <?php endforeach ?>
-                                </select>
-                            </div>
-                            <?php else: ?>
-                            <div class="form-group"><label>Supplier</label>
-                                <input type="hidden" name="supplier">
-                                <div class="d-sm-flex justify-content-between">
-                                    <span class="text-danger"><i>(Belum Ada Data supplier!)</i></span>
-                                    <a href="<?= base_url() ?>supplier" class="btn btn-sm btn-primary btn-icon-split">
-                                        <span class="icon text-white">
-                                            <i class="fas fa-plus"></i>
-                                        </span>
-                                    </a>
-                                </div>
-                            </div>
-                            <?php endif; ?>
-
                             <!-- Jumlah Barang -->
                             <div class="form-group"><label>Jumlah Masuk</label>
                                 <input class="form-control" name="jmlbarang" type="number" placeholder="">

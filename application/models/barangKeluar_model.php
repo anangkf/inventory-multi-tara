@@ -13,6 +13,8 @@ class barangKeluar_model extends ci_model{
       $this->db->select('*');
       $this->db->from('barang_keluar as bk');
       $this->db->join('barang as b', 'b.id_barang = bk.id_barang');
+      $this->db->join('pelanggan as p', 'p.id_pelanggan = bk.id_pelanggan');
+
       $this->db->order_by('bk.id_barang_keluar','DESC');
       return $query = $this->db->get();
     }
@@ -22,6 +24,7 @@ class barangKeluar_model extends ci_model{
       $this->db->select('*');
       $this->db->from('barang_keluar as bk');
       $this->db->join('barang as b', 'b.id_barang = bk.id_barang');
+      $this->db->join('pelanggan as p', 'p.id_pelanggan = bk.id_pelanggan');
 
       $this->db->like('bk.tgl_keluar', $tahun);
       $this->db->order_by('bk.id_barang_keluar','DESC');
@@ -33,6 +36,8 @@ class barangKeluar_model extends ci_model{
       $this->db->select('*');
       $this->db->from('barang_keluar as bk');
       $this->db->join('barang as b', 'b.id_barang = bk.id_barang');
+      $this->db->join('pelanggan as p', 'p.id_pelanggan = bk.id_pelanggan');
+
       $this->db->order_by('bk.id_barang_keluar','DESC');
       $this->db->limit(5);
       return $query = $this->db->get();
@@ -43,6 +48,7 @@ class barangKeluar_model extends ci_model{
       $this->db->select('*');
       $this->db->from('barang_keluar as bk');
       $this->db->join('barang as b', 'b.id_barang = bk.id_barang');
+      $this->db->join('pelanggan as p', 'p.id_pelanggan = bk.id_pelanggan');
 
       $this->db->where('bk.tgl_keluar >=', $tglAwal);
       $this->db->where('bk.tgl_keluar <=', $tglAkhir);
@@ -54,6 +60,7 @@ class barangKeluar_model extends ci_model{
       $this->db->select('*');
       $this->db->from('barang_keluar as bk');
       $this->db->join('barang as b', 'b.id_barang = bk.id_barang');
+      $this->db->join('pelanggan as p', 'p.id_pelanggan = bk.id_pelanggan');
 
       $this->db->where('bk.tgl_keluar >=', $tglAwal);
       $this->db->where('bk.tgl_keluar <=', $tglAkhir);
@@ -66,6 +73,7 @@ class barangKeluar_model extends ci_model{
       $this->db->select('*');
       $this->db->from('barang_keluar as bk');
       $this->db->join('barang as b', 'b.id_barang = bk.id_barang');
+      $this->db->join('pelanggan as p', 'p.id_pelanggan = bk.id_pelanggan');
       $this->db->where('bk.id_barang_keluar',$where);
       $this->db->order_by('bk.id_barang_keluar','DESC');
       return $query = $this->db->get();
