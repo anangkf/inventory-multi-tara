@@ -163,7 +163,7 @@ if (!$this->session->has_userdata('login_session')) {
 
             <?php endif; ?>
 
-            <?php if($this->session->userdata('login_session')['level'] == 'admin'): ?>
+						<?php if($this->session->userdata('login_session')['level'] == 'admin' || $this->session->userdata('login_session')['level'] == 'manajer'): ?>
 
             <!-- Heading -->
             <div class="sidebar-heading">
